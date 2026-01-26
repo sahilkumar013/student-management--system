@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/static/core/css/style.css">
+<div class="container">
+<h2>Student List</h2>
+<a href="/add/">Add Student</a>
+<a href="/logout/" class="danger">Logout</a>
+<table>
+<tr>
+<th>Name</th><th>Course</th><th>Fees</th><th>Status</th><th>Action</th>
+</tr>
+{% for s in students %}
+<tr>
+<td>{{s.name}}</td>
+<td>{{s.course}}</td>
+<td>{{s.fees}}</td>
+<td>{{ s.is_paid|yesno:"Paid,Unpaid" }}</td>
+<td>
+<a href="/edit/{{s.id}}/">Edit</a>
+<a href="/delete/{{s.id}}/" class="danger">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+</div>
