@@ -1,4 +1,4 @@
-* Student Management System (Django)
+# Student Management System (Django)
 
 A simple Student Management System built using Django that allows authenticated users to manage student records with full CRUD functionality.
 
@@ -22,7 +22,7 @@ This project is beginner-friendly and demonstrates real-world Django concepts li
 
 8 Protected Routes using login_required
 
-* Tech Stack
+# Tech Stack
 
 Backend: Python, Django
 
