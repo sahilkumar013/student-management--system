@@ -1,28 +1,28 @@
-🎓 Student Management System (Django)
+* Student Management System (Django)
 
 A simple Student Management System built using Django that allows authenticated users to manage student records with full CRUD functionality.
 
 This project is beginner-friendly and demonstrates real-world Django concepts like authentication, authorization, form handling, and database operations.
 
-🚀 Features
+# Features
 
-🔐 User Authentication (Login / Logout)
+1 User Authentication (Login / Logout)
 
-👨‍🎓 Add New Students
+2 Add New Students
 
-📋 View Student List
+3 View Student List
 
-✏️ Edit Student Details
+4 Edit Student Details
 
-🗑️ Delete Students
+5 Delete Students
 
-📧 Unique Email Validation
+6 Unique Email Validation
 
-✅ Paid / Unpaid Fee Status
+7 Paid / Unpaid Fee Status
 
-🔒 Protected Routes using login_required
+8 Protected Routes using login_required
 
-🛠️ Tech Stack
+* Tech Stack
 
 Backend: Python, Django
 
