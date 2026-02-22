@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/static/core/css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <div class="container">
 <h2>Student Form</h2>
 <form method="post">
@@ -7,8 +8,10 @@
 <input name="email" value="{{student.email}}" placeholder="Email"><br><br>
 <input name="course" value="{{student.course}}" placeholder="Course"><br><br>
 <input name="fees" value="{{student.fees}}" placeholder="Fees"><br><br>
-<label><input type="checkbox" name="is_paid" {% if student.is_paid %}checked{% endif %}> Fees Paid</label><br><br>
-<button>Save</button>
+<label>
+    <input type="checkbox" name="is_paid" {% if student.is_paid %}checked{% endif %}> 
+    Fees Paid</label><br><br>
+<button class="btn btn-primary">Submit</button>
 {% if error %}
 <p style="color:red; font-weight:bold;">
     {{ error }}

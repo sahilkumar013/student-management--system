@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Student
+from django.core.paginator import Paginator
+
 
 def login_view(request):
     if request.method == "POST":
@@ -20,8 +22,24 @@ def logout_view(request):
     return redirect('login')
 
 @login_required
+# def student_list(request):
+#     students = Student.objects.all()
+#     return render(request, 'students/list.html', {'students': students})
+
+
+
 def student_list(request):
-    students = Student.objects.all()
+    query = request.GET.get('q')
+
+    if query:
+        students_list = Student.objects.filter(name__icontains=query)
+    else:
+        students_list = Student.objects.all()
+
+    paginator = Paginator(students_list, 5)  # 5 per page
+    page = request.GET.get('page')
+    students = paginator.get_page(page)
+
     return render(request, 'students/list.html', {'students': students})
 
 @login_required
@@ -66,3 +84,5 @@ def edit_student(request, id):
 def delete_student(request, id):
     Student.objects.get(id=id).delete()
     return redirect('/')
+
+
