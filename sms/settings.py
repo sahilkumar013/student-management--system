@@ -126,5 +126,8 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'student_list'
 LOGOUT_REDIRECT_URL = 'login'
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
+import os
+
+STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
